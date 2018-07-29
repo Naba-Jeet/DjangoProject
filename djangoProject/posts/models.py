@@ -29,6 +29,17 @@ class PostModelQuerySet(models.query.QuerySet):
     def post_title_items(self, value):
         return self.filter(title__icontains=value)
 
+class Product(models.Model):
+    product_title = models.CharField(max_length=100)
+    product_price = models.IntegerField()
+    product_desc = models.TextField(max_length=200)
+    date = models.DateField(default= timezone.now())
+
+class Comment(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length=255, null=True, default=None)
+    notes = models.CharField(max_length=255)
+
 
 class PostModelManager(models.Manager):
     def get_queryset(self):
