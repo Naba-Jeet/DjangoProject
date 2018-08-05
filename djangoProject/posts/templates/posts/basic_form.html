@@ -1,0 +1,13 @@
+{% extends 'posts/layout.html' %}
+    {% block content %}
+    <h6>Basic Form Validation</h6>
+    <div>
+
+        <form method='POST', action=".">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+    {% endblock %}

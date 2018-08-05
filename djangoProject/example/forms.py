@@ -23,6 +23,14 @@ class NameForm(forms.Form):
             raise forms.ValidationError("Age Must be greater than 18")
         else:
             return your_age
+
+class NewForm(forms.Form):
+    name = forms.CharField()
+    age  = forms.IntegerField()
+    qualification = forms.CharField()
+    email = forms.EmailField()
+    password = forms.PasswordInput()
+
 #
 #
 # class ProductForm(ModelForm):
